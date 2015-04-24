@@ -106,7 +106,7 @@ public class OVRCrosshair
 	{
 		DisplayCrosshair 		= false;
 		CollisionWithGeometry 	= false;
-		FadeVal 		 		= 0.0f;
+		FadeVal 		 		= 1.0f;
 	
 		ScreenWidth  = Screen.width;
 		ScreenHeight = Screen.height;
