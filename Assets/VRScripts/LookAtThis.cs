@@ -40,13 +40,12 @@ public class LookAtThis : BaseInputModule{
 		SendUpdateEventToSelectedObject ();
 		GetPointerEventData ();
 		HandlePointerExitAndEnter (lookData, lookData.pointerCurrentRaycast.gameObject);
-		if (Input.GetKey(KeyCode.A)) {
+		if (Input.GetButton (ButtonsPressed)) {
 			GameObject gameObj = lookData.pointerCurrentRaycast.gameObject;
 			if (gameObj != null) {
 				GameObject newPressedObject = ExecuteEvents.ExecuteHierarchy (gameObj, lookData, ExecuteEvents.submitHandler);
 				if (newPressedObject == null) {
 					newPressedObject = ExecuteEvents.ExecuteHierarchy (gameObj, lookData, ExecuteEvents.selectHandler);
-				
 				}
 				if (newPressedObject != null) {
 					eventSystem.SetSelectedGameObject (newPressedObject);
@@ -56,7 +55,7 @@ public class LookAtThis : BaseInputModule{
 
 		if (eventSystem.currentSelectedGameObject && ControlAxis != "") {
 			float newAxisValue = Input.GetAxis (ControlAxis);
-			if(newAxisValue > 0.01f || newAxisValue < -0.01f){
+			if(newAxisValue > 1.0f || newAxisValue < 0.0f){
 				AxisEventData axisEData = GetAxisEventData (newAxisValue,0.0f,0.0f);
 				ExecuteEvents.Execute (eventSystem.currentSelectedGameObject,axisEData,ExecuteEvents.moveHandler);
 			}
