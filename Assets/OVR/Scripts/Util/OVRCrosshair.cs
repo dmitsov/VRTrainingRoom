@@ -104,8 +104,8 @@ public class OVRCrosshair
 	/// </summary>
 	public void Init()
 	{
-		DisplayCrosshair 		= false;
-		CollisionWithGeometry 	= false;
+		DisplayCrosshair 		= true;
+		CollisionWithGeometry 	= true;
 		FadeVal 		 		= 1.0f;
 	
 		ScreenWidth  = Screen.width;
@@ -191,6 +191,7 @@ public class OVRCrosshair
 		
 			if(skipMouseRotation == true)
 			{
+				Debug.LogWarning (ImageCrosshair);
 				// Left
 				GUI.DrawTexture(new Rect(	XL - (ImageCrosshair.width * 0.5f),
 					                     	YL - (ImageCrosshair.height * 0.5f), 
