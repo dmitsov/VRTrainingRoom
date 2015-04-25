@@ -7,6 +7,7 @@ public class LookAtThis : BaseInputModule{
 	public string ButtonsPressed = "A";
 
 	public string ControlAxis = "Horizontal";
+
 	private PointerEventData lookData;
 
 	//this checks what objec is looked at
@@ -62,5 +63,4 @@ public class LookAtThis : BaseInputModule{
 			}
 		}
 	}
-	
 }

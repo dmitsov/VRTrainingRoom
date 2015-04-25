@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Board : MonoBehaviour {
+public class Board : MonoBehaviour, IGuiInteractable{
 	MovieTexture movie;
 	AudioSource auS;
 
@@ -49,5 +49,10 @@ public class Board : MonoBehaviour {
 				playVideo();
 			}
 		}
+	}
+
+	public void OnHandleEvents(){
+
+
 	}
 }
