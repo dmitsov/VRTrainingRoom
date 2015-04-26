@@ -21,10 +21,8 @@ public class CharacterAnimation : MonoBehaviour {
 	}
 
 	public void OnGrab(){
-		foreach (Transform tr in gameObject.GetComponentsInChildren<Transform>()) {
-			if(tr.gameObject.name == "Tube1" || tr.gameObject.name == "Tube2"){
-				nextDelegate.Invoke ();
-			}
+		if (OculusScript.lookAtObject != null) {
+			nextDelegate.Invoke();
 		}
 		charAnim.SetBool ("shouldGrab",false);
 	}

@@ -10,6 +10,7 @@ public class NaturalColor : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		GetComponent<Renderer> ().material.color = Color.grey;
+		if(OculusScript.lookAtObject != gameObject)
+			GetComponent<Renderer> ().material.color = Color.grey;
 	}
 }

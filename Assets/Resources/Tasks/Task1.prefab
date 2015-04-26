@@ -11,6 +11,7 @@ GameObject:
   - 33: {fileID: 3342626}
   - 23: {fileID: 2310062}
   - 64: {fileID: 6432162}
+  - 114: {fileID: 11454732}
   m_Layer: 0
   m_Name: Tube2
   m_TagString: Untagged
@@ -29,6 +30,7 @@ GameObject:
   - 33: {fileID: 3383844}
   - 23: {fileID: 2379466}
   - 64: {fileID: 6414684}
+  - 114: {fileID: 11437372}
   m_Layer: 0
   m_Name: Tube1
   m_TagString: Untagged
@@ -47,6 +49,7 @@ GameObject:
   - 33: {fileID: 3332694}
   - 23: {fileID: 2362638}
   - 64: {fileID: 6401216}
+  - 114: {fileID: 11443426}
   m_Layer: 0
   m_Name: Tube3
   m_TagString: Untagged
@@ -262,6 +265,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   states: 
+--- !u!114 &11437372
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 140890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47b28c4f177d27a419400e2a619946f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11443426
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47b28c4f177d27a419400e2a619946f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11454732
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 106668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47b28c4f177d27a419400e2a619946f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
