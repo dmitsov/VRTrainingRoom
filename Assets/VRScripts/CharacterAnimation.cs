@@ -5,6 +5,8 @@ public class CharacterAnimation : MonoBehaviour {
 	private Animator charAnim;
 	private AnimationEvent eventGrab;
 	public Transform bone;
+	public delegate void OnNextStep ();
+	public static OnNextStep nextDelegate;
 	// Use this for initialization
 	void Start () {
 		charAnim = GetComponent<Animator> ();
@@ -21,7 +23,7 @@ public class CharacterAnimation : MonoBehaviour {
 	public void OnGrab(){
 		foreach (Transform tr in gameObject.GetComponentsInChildren<Transform>()) {
 			if(tr.gameObject.name == "Tube1" || tr.gameObject.name == "Tube2"){
-
+				nextDelegate.Invoke ();
 			}
 		}
 		charAnim.SetBool ("shouldGrab",false);
