@@ -41,7 +41,7 @@ public class TaskManager : MonoBehaviour {
 		GameObject table = GameObject.Find ("Table");
 		activeTask.transform.parent = table.transform;
 		activeTask.transform.position = new Vector3 (activeTask.transform.parent.position.x,
-		                                            activeTask.transform.parent.position.y + Vector3.up,
+		                                            activeTask.transform.parent.position.y + 1,
 		                                            activeTask.transform.parent.position.z);
 		taskStatus = TaskState.Running;
 	}
