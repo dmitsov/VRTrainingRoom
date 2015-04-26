@@ -265,6 +265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   states: 
+  Liquid: {fileID: 148838, guid: 89264eaf00f8c0548b989175be542ca0, type: 2}
 --- !u!114 &11437372
 MonoBehaviour:
   m_ObjectHideFlags: 1

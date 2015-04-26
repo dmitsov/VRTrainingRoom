@@ -12,7 +12,7 @@ Platform assembly: C:\Users\Donny Mitsov\Documents\VRTrainingRoom\VRTrainingRoom
 Loading C:\Users\Donny Mitsov\Documents\VRTrainingRoom\VRTrainingRoom_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: C:\Users\Donny Mitsov\Documents\VRTrainingRoom\VRTrainingRoom_Data\Managed\UnityEngine.UI.dll (this message is harmless)
 Loading C:\Users\Donny Mitsov\Documents\VRTrainingRoom\VRTrainingRoom_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.049 seconds
+- Completed reload, in  0.058 seconds
 <RI> Initializing input.
 <RI> Input initialized.
 desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
@@ -27,8 +27,8 @@ OVRMainMenu:Awake() (at C:\Users\Donny Mitsov\Documents\VRTrainingRoom\Assets\OV
 (Filename: C:/Users/Donny Mitsov/Documents/VRTrainingRoom/Assets/OVR/Scripts/Util/OVRMainMenu.cs Line: 225)
 
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 6bc -> priority: 1 
-  Thread -> id: 1558 -> priority: 1 
+  Thread -> id: 1ac8 -> priority: 1 
+  Thread -> id: 13f4 -> priority: 1 
 E pressed
 UnityEngine.Debug:Internal_Log(Int32, String, Object)
 UnityEngine.Debug:LogWarning(Object)
@@ -39,18 +39,32 @@ CharacterAnimation:Update() (at C:\Users\Donny Mitsov\Documents\VRTrainingRoom\A
 Step1 taken!
 UnityEngine.Debug:Internal_Log(Int32, String, Object)
 UnityEngine.Debug:LogWarning(Object)
-Task1:NextStep() (at C:\Users\Donny Mitsov\Documents\VRTrainingRoom\Assets\Task1.cs:45)
-CharacterAnimation:OnGrab() (at C:\Users\Donny Mitsov\Documents\VRTrainingRoom\Assets\VRScripts\CharacterAnimation.cs:25)
- 
-(Filename: C:/Users/Donny Mitsov/Documents/VRTrainingRoom/Assets/Task1.cs Line: 45)
-
-Step1 taken!
-UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:LogWarning(Object)
 Task1:NextStep() (at C:\Users\Donny Mitsov\Documents\VRTrainingRoom\Assets\Task1.cs:47)
 CharacterAnimation:OnGrab() (at C:\Users\Donny Mitsov\Documents\VRTrainingRoom\Assets\VRScripts\CharacterAnimation.cs:25)
  
 (Filename: C:/Users/Donny Mitsov/Documents/VRTrainingRoom/Assets/Task1.cs Line: 47)
+
+Step1 taken!
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:LogWarning(Object)
+Task1:NextStep() (at C:\Users\Donny Mitsov\Documents\VRTrainingRoom\Assets\Task1.cs:49)
+CharacterAnimation:OnGrab() (at C:\Users\Donny Mitsov\Documents\VRTrainingRoom\Assets\VRScripts\CharacterAnimation.cs:25)
+ 
+(Filename: C:/Users/Donny Mitsov/Documents/VRTrainingRoom/Assets/Task1.cs Line: 49)
+
+E pressed
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:LogWarning(Object)
+CharacterAnimation:Update() (at C:\Users\Donny Mitsov\Documents\VRTrainingRoom\Assets\VRScripts\CharacterAnimation.cs:18)
+ 
+(Filename: C:/Users/Donny Mitsov/Documents/VRTrainingRoom/Assets/VRScripts/CharacterAnimation.cs Line: 18)
+
+E pressed
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:LogWarning(Object)
+CharacterAnimation:Update() (at C:\Users\Donny Mitsov\Documents\VRTrainingRoom\Assets\VRScripts\CharacterAnimation.cs:18)
+ 
+(Filename: C:/Users/Donny Mitsov/Documents/VRTrainingRoom/Assets/VRScripts/CharacterAnimation.cs Line: 18)
 
 E pressed
 UnityEngine.Debug:Internal_Log(Int32, String, Object)
