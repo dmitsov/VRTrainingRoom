@@ -8,104 +8,58 @@ public class Task1 : MonoBehaviour {
 	private int selected;
 	private ArrayList rend;
 	private ArrayList childr;
+	private TaskStep step;
+
+	private enum TaskStep
+	{
+		Step1,
+		Step2,
+		Step3,
+		Step4,
+		Step5,
+		Finished
+	}
 
 	public bool isCompleted() {
 		return completed;
 	}
 	
 	void Start () {
-		/*
-		Task1 states:
-			0 -> Tube 1 picked up
-			1 -> Tube 2 picked up
-			2 -> Tube 1 poured into Tube 3
-			3 -> Tube 2 into Tube 3
-		*/
-		states = new int[]{0, 0, 0, 0};
-		completed = false;
-		selected = 0;
-
-		childr = new ArrayList();
-		int cPos = 0;
-		foreach(Transform child in transform) {
-			childr.Add(child.gameObject);
-			cPos++;
-		}
-
-		rend = new ArrayList ();
-		foreach(Renderer r in GetComponentsInChildren<Renderer>()) {
-			rend.Add(r);
-		}
-		((Renderer)rend[selected]).material = (Material)Resources.Load ("Materials/Selected");
+		step = TaskStep.Step1;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetButtonDown("Horizontal")) {
-			((Renderer)rend[selected]).material = (Material)Resources.Load ("Materials/TubeMaterial");
-			if(Input.GetAxis ("Horizontal") > 0) {
-				selected--;
-				if(selected < 0) {
-					selected = rend.Count - 1;
-				}
-			}
-			else {
-				selected++;
-				if(selected > rend.Count - 1){
-					selected = 0;
-				}
-			}
+		if(OculusScript.lookAtObject != null)
+			OculusScript.lookAtObject.GetComponent<Renderer> ().material.color = Color.red;
+	}
 
-			((Renderer)rend[selected]).material = (Material)Resources.Load ("Materials/Selected");
+	public void NextStep(){
+		GameObject obj = OculusScript.lookAtObject;
+		if (step == TaskStep.Step1) {
+			if(obj.name != "Tube2"){
+				OculusScript.lookAtObject.GetComponent<Renderer>().enabled = false;
+				step = TaskStep.Step2;
+			}
+		} else if(step == TaskStep.Step2) {		
+			//prefab here
+			if(obj.name == "Tube2"){
+
+				step = TaskStep.Step3;
+			}
+		} else if(step == TaskStep.Step3){
+			if(obj.name != "Tube2"){
+				OculusScript.lookAtObject.GetComponent<Renderer>().enabled = false;
+				step = TaskStep.Step4;
+			}		
+		} else if (step == TaskStep.Step4) {
+			//prefab here
+			if(obj.name == "Tube2"){	
+				step = TaskStep.Step5;
+			}
+		} else if (step == TaskStep.Step5) {
+			step = TaskStep.Finished;
+			//effect
 		}
-		else if(Input.GetButtonDown("Jump")) {
-			string objectName = ((Renderer)rend[selected]).gameObject.name;
-
-			if(objectName.Equals("Tube1") && states[1] == 0) {
-				((Renderer)rend[selected]).material = (Material)Resources.Load ("Materials/TubeMaterial");
-				rend.RemoveAt(selected);
-
-				Vector3 tempPos = ((GameObject)childr[selected]).GetComponent<Transform>().position;
-				tempPos.y += 0.1f;
-				((GameObject)childr[selected]).GetComponent<Transform>().position = tempPos;
-
-				selected++;
-				if(selected > rend.Count - 1){
-					selected = rend.Count - 1;
-				}
-				((Renderer)rend[selected]).material = (Material)Resources.Load ("Materials/Selected");
-				states[0] = 1;
-			}
-			else if(objectName.Equals("Tube2") && states[0] == 0) {
-				((Renderer)rend[selected]).material = (Material)Resources.Load ("Materials/TubeMaterial");
-				rend.RemoveAt(selected);
-				
-				Vector3 tempPos = ((GameObject)childr[selected]).GetComponent<Transform>().position;
-				tempPos.y += 0.1f;
-				((GameObject)childr[selected]).GetComponent<Transform>().position = tempPos;
-				
-				selected++;
-				if(selected > rend.Count - 1){
-					selected = rend.Count - 1;
-				}
-
-				((Renderer)rend[selected]).material = (Material)Resources.Load ("Materials/Selected");
-				states[1] = 1;
-			}
-			else if(objectName.Equals("Tube3")) {
-				if(states[0] == 1) {
-
-				}
-				else if(states[1] == 1) {
-
-				}
-			}
-		}
-		foreach (Transform tr in GetComponentsInChildren<Transform>()) {
-			if(OculusScript.lookAtObject != tr.gameObject){
-				tr.position = new Vector3(tr.position.x, transform.position.y,tr.position.z);
-			}
-		}
-
 	}
 }
