@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 464426}
   - 33: {fileID: 3342626}
   - 23: {fileID: 2310062}
+  - 64: {fileID: 6432162}
   m_Layer: 0
   m_Name: Tube2
   m_TagString: Untagged
@@ -27,7 +28,7 @@ GameObject:
   - 4: {fileID: 453070}
   - 33: {fileID: 3383844}
   - 23: {fileID: 2379466}
-  - 114: {fileID: 11473062}
+  - 64: {fileID: 6414684}
   m_Layer: 0
   m_Name: Tube1
   m_TagString: Untagged
@@ -45,6 +46,7 @@ GameObject:
   - 4: {fileID: 447468}
   - 33: {fileID: 3332694}
   - 23: {fileID: 2362638}
+  - 64: {fileID: 6401216}
   m_Layer: 0
   m_Name: Tube3
   m_TagString: Untagged
@@ -212,6 +214,42 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 140890}
   m_Mesh: {fileID: 4300000, guid: 2331fc6a16054b34daa9ac6a6b0621ce, type: 3}
+--- !u!64 &6401216
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141172}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 4300000, guid: 2331fc6a16054b34daa9ac6a6b0621ce, type: 3}
+--- !u!64 &6414684
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 140890}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 4300000, guid: 2331fc6a16054b34daa9ac6a6b0621ce, type: 3}
+--- !u!64 &6432162
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 106668}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 4300000, guid: 2331fc6a16054b34daa9ac6a6b0621ce, type: 3}
 --- !u!114 &11417488
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -224,17 +262,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   states: 
---- !u!114 &11473062
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 140890}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a67a7069c6f67c746823b5348b30b68f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
