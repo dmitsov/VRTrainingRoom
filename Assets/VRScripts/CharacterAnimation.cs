@@ -20,7 +20,9 @@ public class CharacterAnimation : MonoBehaviour {
 
 	public void OnGrab(){
 		foreach (Transform tr in gameObject.GetComponentsInChildren<Transform>()) {
-			Debug.LogWarning (tr);
+			if(tr.gameObject.name == "Tube1" || tr.gameObject.name == "Tube2"){
+
+			}
 		}
 		charAnim.SetBool ("shouldGrab",false);
 	}

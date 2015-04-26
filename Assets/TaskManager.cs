@@ -14,7 +14,7 @@ public class TaskManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		StartTask ("Task1");
 	}
 	
 	// Update is called once per frame
@@ -37,10 +37,15 @@ public class TaskManager : MonoBehaviour {
 	}
 
 	public static void StartTask(string name){
-		activeTask = (GameObject)Resources.Load (name);
+		activeTask = GameObject.Instantiate((GameObject)Resources.Load("Tasks/" + name));
 		GameObject table = GameObject.Find ("Table");
-		activeTask.transform.parent = table.transform;
-		activeTask.transform.position = table.transform.position + Vector3.up;
+		activeTask.transform.position = table.transform.position + Vector3.up + Vector3.left*0.75f;
+	
+		foreach (Transform tr in activeTask.GetComponentsInChildren<Transform>()) {
+			if(tr.gameObject.GetComponent<Renderer>() != null)
+				tr.gameObject.GetComponent<Renderer>().enabled = true;
+		}
+
 		taskStatus = TaskState.Running;
 	}
 
