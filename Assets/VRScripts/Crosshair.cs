@@ -28,7 +28,7 @@ public class Crosshair : MonoBehaviour {
 
 		transform.localScale = originScale * distance;
 
-		if (LookAtThis.isLookingAtGui ()) {
+		if (LookAtThis.isLookingAtGui () || OculusScript.lookAtObject != null) {
 			GetComponent<Renderer>().enabled = false;
 		} else {
 			GetComponent<Renderer>().enabled = true;

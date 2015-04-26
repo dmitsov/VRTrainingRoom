@@ -24,12 +24,12 @@ public class OculusScript : MonoBehaviour{
 			   		|| hit.collider.gameObject.name == "Tube3"){
 				if(hit.collider.gameObject.GetComponent<Renderer>().enabled){
 					lookAtObject = hit.collider.gameObject;
-					lookAtObject.transform.position = lookAtObject.transform.position + Vector3.up;
-					Debug.LogWarning ("The ray hit: " + hit.collider.gameObject.name);
 				} else {
 					lookAtObject = null;
 				}
-			} 
+			} else {
+				lookAtObject = null;
+			}
 		}
 	}
 }
