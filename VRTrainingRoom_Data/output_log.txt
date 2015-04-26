@@ -19,6 +19,10 @@ desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initialized touch support.
 Platform assembly: C:\Users\Donny Mitsov\Documents\VRTrainingRoom\VRTrainingRoom_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\Donny Mitsov\Documents\VRTrainingRoom\VRTrainingRoom_Data\Managed\System.dll (this message is harmless)
+The referenced script on this Behaviour is missing!
+ 
+(Filename: C:/buildslave/unity/build/Runtime/Mono/MonoBehaviour.cpp Line: 1713)
+
 OVRMainMenu: No OVRPlayerController attached.
 UnityEngine.Debug:Internal_Log(Int32, String, Object)
 UnityEngine.Debug:LogWarning(Object)
@@ -27,11 +31,6 @@ OVRMainMenu:Awake() (at C:\Users\Donny Mitsov\Documents\VRTrainingRoom\Assets\OV
 (Filename: C:/Users/Donny Mitsov/Documents/VRTrainingRoom/Assets/OVR/Scripts/Util/OVRMainMenu.cs Line: 225)
 
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 1384 -> priority: 1 
-  Thread -> id: c24 -> priority: 1 
-<RI.Hid> Failed to create device file:
- 2 Системата не може да намери указания файл.
-
- 
-(Filename: C:/buildslave/unity/build/PlatformDependent/Win/RawInput.cpp Line: 54)
-
+  Thread -> id: 12e8 -> priority: 1 
+  Thread -> id: 5c -> priority: 1 
+Waiting for finish

@@ -101,5 +101,11 @@ public class Task1 : MonoBehaviour {
 				}
 			}
 		}
+		foreach (Transform tr in GetComponentsInChildren<Transform>()) {
+			if(OculusScript.lookAtObject != tr.gameObject){
+				tr.position = new Vector3(tr.position.x, transform.position.y,tr.position.z);
+			}
+		}
+
 	}
 }
