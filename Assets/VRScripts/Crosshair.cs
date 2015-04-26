@@ -27,5 +27,11 @@ public class Crosshair : MonoBehaviour {
 		}
 
 		transform.localScale = originScale * distance;
+
+		if (LookAtThis.isLookingAtGui ()) {
+			GetComponent<Renderer>().enabled = false;
+		} else {
+			GetComponent<Renderer>().enabled = true;
+		}
 	}
 }

@@ -12,7 +12,7 @@ Platform assembly: C:\Users\Donny Mitsov\Documents\VRTrainingRoom\VRTrainingRoom
 Loading C:\Users\Donny Mitsov\Documents\VRTrainingRoom\VRTrainingRoom_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: C:\Users\Donny Mitsov\Documents\VRTrainingRoom\VRTrainingRoom_Data\Managed\UnityEngine.UI.dll (this message is harmless)
 Loading C:\Users\Donny Mitsov\Documents\VRTrainingRoom\VRTrainingRoom_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.060 seconds
+- Completed reload, in  0.077 seconds
 <RI> Initializing input.
 <RI> Input initialized.
 desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
@@ -27,12 +27,11 @@ OVRMainMenu:Awake() (at C:\Users\Donny Mitsov\Documents\VRTrainingRoom\Assets\OV
 (Filename: C:/Users/Donny Mitsov/Documents/VRTrainingRoom/Assets/OVR/Scripts/Util/OVRMainMenu.cs Line: 225)
 
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 137c -> priority: 1 
-  Thread -> id: 1980 -> priority: 1 
+  Thread -> id: 1384 -> priority: 1 
+  Thread -> id: c24 -> priority: 1 
 <RI.Hid> Failed to create device file:
  2 Системата не може да намери указания файл.
 
  
 (Filename: C:/buildslave/unity/build/PlatformDependent/Win/RawInput.cpp Line: 54)
 
-Waiting for finish

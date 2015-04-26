@@ -13,7 +13,7 @@ public class Board : MonoBehaviour {
 		AudioSource audS = GetComponentInChildren<AudioSource>();
 		AudioClip audClip = (AudioClip)Resources.Load(name + "A");
 		audS.clip = audClip;
-
+	
 		//pauseVideo();
 	}
 
@@ -38,10 +38,15 @@ public class Board : MonoBehaviour {
 		movie.Pause ();
 		auS = gameObject.GetComponentInChildren<AudioSource>();
 		auS.Pause ();
-	}
+		VideoControlEvents.plDelegate += playVideo;
+		VideoControlEvents.psDelegate += pauseVideo;
+		VideoControlEvents.stopDelegate += stopVideo;
+
+		VideoChooser.loadDelegate += loadVideo;
+	}	
 	
 	void Update () {
-		if (Input.GetButtonDown ("Jump")) {
+		if (Input.GetKey(KeyCode.A)) {
 			if(movie.isPlaying){
 				pauseVideo();
 			}

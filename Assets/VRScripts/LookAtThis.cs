@@ -4,10 +4,13 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class LookAtThis : BaseInputModule{
-	public string ButtonsPressed = "A";
 
 	public string ControlAxis = "Horizontal";
+	private static bool IsLookingAtGui = false;
+	private static GameObject currentObj;
 	private PointerEventData lookData;
+	public delegate void OnEvent();
+	public static OnEvent eventHandle;
 
 	//this checks what objec is looked at
 	private void GetPointerEventData(){
@@ -40,27 +43,23 @@ public class LookAtThis : BaseInputModule{
 		SendUpdateEventToSelectedObject ();
 		GetPointerEventData ();
 		HandlePointerExitAndEnter (lookData, lookData.pointerCurrentRaycast.gameObject);
-		if (Input.GetKey(KeyCode.A)) {
-			GameObject gameObj = lookData.pointerCurrentRaycast.gameObject;
-			if (gameObj != null) {
-				GameObject newPressedObject = ExecuteEvents.ExecuteHierarchy (gameObj, lookData, ExecuteEvents.submitHandler);
-				if (newPressedObject == null) {
-					newPressedObject = ExecuteEvents.ExecuteHierarchy (gameObj, lookData, ExecuteEvents.selectHandler);
-				
-				}
-				if (newPressedObject != null) {
-					eventSystem.SetSelectedGameObject (newPressedObject);
-				}
-			}
-		}
-
-		if (eventSystem.currentSelectedGameObject && ControlAxis != "") {
-			float newAxisValue = Input.GetAxis (ControlAxis);
-			if(newAxisValue > 0.01f || newAxisValue < -0.01f){
-				AxisEventData axisEData = GetAxisEventData (newAxisValue,0.0f,0.0f);
-				ExecuteEvents.Execute (eventSystem.currentSelectedGameObject,axisEData,ExecuteEvents.moveHandler);
-			}
-		}
+		if (!IsLookingAtGui)
+			return;
+		eventSystem.SetSelectedGameObject (lookData.pointerCurrentRaycast.gameObject);
+		eventHandle.Invoke();
 	}
-	
+
+	public static void SetCurrenGuiCanvas(GameObject canvas){
+		currentObj = canvas;
+		IsLookingAtGui = true;
+	}
+
+	public static void NullifyCurrenGuiCanvas(){
+		currentObj = null;
+		IsLookingAtGui = false;
+	}
+
+	public static bool isLookingAtGui(){
+		return IsLookingAtGui;
+	}
 }
